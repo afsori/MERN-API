@@ -1,0 +1,50 @@
+Standar API
+
+{root.api}/v1/{grouping}/{endpoint}
+Sample:
+http://mern-api.afsori.com/v1/auth/login
+
+=======================================================================================
+Standar Status response:
+- 200 - ok - call api success
+- 201 - created - post success
+- 400 - bad request - error on client side (bisa input yg salah, dll)
+- 401 - unauthorized - user not authorized tp the request.
+- 403 - forbiden  -user not lalowed to access.
+- 404 - not found - request endpoint not found
+- 500 - internal server error - error on server side.
+- 502 - bad gateway - invalid response from another request
+=======================================================================================
+
+Group: Authentication
+- Register
+{root-api}/{version}/auth/register
+req:{
+    "name":"afsori",
+    "email":"afsori@gmail.com",
+    password:"afs12345"
+}
+
+res:{
+    "message":"success",
+    "data":{
+        "id":1,
+        "name":"afsori",
+        "email":"afsori@gmail.com",
+        "password":"afs12345"
+    }
+}
+
+err-response:
+- 400 -> input yg anda masukkan salah
+
+- Login
+{root-api}/{version}/auth/login
+
+Group : Main-app / homepage
+- Create Blog post
+- Get Blog post
+- Update
+- Delete
+-
+
