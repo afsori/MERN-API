@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema();
+const Schema = mongoose.Schema;
 
 const BlogPost = new Schema({
     title:{
         type:String,
         required:true
     },
-    // image:{}
+    image:{
+        type:String,
+        required:true
+    },
     body:{
         type:String,
         required:true
@@ -18,6 +21,6 @@ const BlogPost = new Schema({
     }
 },{
     timestamps:true
-})
+});
 
 module.exports = mongoose.model("BlogPost",BlogPost);

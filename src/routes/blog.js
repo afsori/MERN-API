@@ -11,4 +11,15 @@ router.post("/post",[
     body("body").isLength({min:5}).withMessage("title min 5 character")], 
     blogController.createBlogPost);
 
+router.get("/posts", blogController.getAllBlogPost);
+
+router.get("/post/:postId", blogController.getBlogPostById);
+
+router.put("/post/:postId",[
+    body("title").isLength({min:5}).withMessage("title min 5 character"), 
+    body("body").isLength({min:5}).withMessage("title min 5 character")],
+     blogController.updateBlogpost);
+
+router.delete("/post/:postId", blogController.deleteBlogPost);
+
 module.exports = router;
